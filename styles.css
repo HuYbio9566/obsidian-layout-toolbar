@@ -3,10 +3,7 @@ body.content-width-control-enabled {
 }
 
 body.content-width-control-enabled .markdown-preview-view.is-readable-line-width .markdown-preview-sizer,
-body.content-width-control-enabled .markdown-source-view.mod-cm6.is-readable-line-width .cm-sizer,
-body.content-width-control-enabled .markdown-source-view.mod-cm6.is-readable-line-width .cm-contentContainer,
-body.content-width-control-enabled .markdown-source-view.mod-cm6.is-readable-line-width .cm-content,
-body.content-width-control-enabled .markdown-source-view.mod-cm6.is-readable-line-width .cm-line {
+body.content-width-control-enabled .markdown-source-view.mod-cm6.is-readable-line-width .cm-sizer {
   max-width: var(--content-width-control-percent) !important;
 }
 
@@ -18,7 +15,8 @@ body.content-width-control-enabled .markdown-source-view.mod-cm6.is-readable-lin
 
 body.content-width-control-enabled .markdown-source-view.mod-cm6.is-readable-line-width .cm-content,
 body.content-width-control-enabled .markdown-source-view.mod-cm6.is-readable-line-width .cm-line {
-  width: 100%;
+  max-width: none !important;
+  width: auto;
 }
 
 body.content-width-control-enabled :is(.markdown-preview-view table, .markdown-rendered table, .markdown-source-view.mod-cm6 table) {
