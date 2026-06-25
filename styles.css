@@ -553,7 +553,11 @@ body.layout-toolbar-enabled[style*="--layout-toolbar-table-row-spacing"] :is(.ma
 }
 
 .layout-toolbar-dropdown-item:hover,
-.layout-toolbar-dropdown-item:focus-visible,
+.layout-toolbar-dropdown-item:focus-visible {
+  color: #333639;
+  background: #f6f6f6 !important;
+}
+
 .layout-toolbar-dropdown-item.is-primary,
 .layout-toolbar-dropdown-item.is-selected {
   color: #3873fa;
