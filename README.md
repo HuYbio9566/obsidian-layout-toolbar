@@ -6,23 +6,29 @@ It is designed for people who want notes to feel more like editable documents: q
 
 ## Screenshots
 
-### Floating toolbar
+### Settings
 
-Use the compact toolbar to change the current note width, open color controls, and access table tools.
+Configure global defaults for note width, the floating toolbar, heading colors, table width, and row spacing.
 
-![Floating toolbar variants](docs/assets/toolbar-overview.png)
+![Settings](docs/assets/settings.png)
 
 ### Color controls
 
 Apply heading text colors, heading backgrounds, or selected table-cell backgrounds without changing global defaults.
 
-![Color panel](docs/assets/color-panel.png)
+![Color controls](docs/assets/color-controls.png)
 
-### Table resizing
+### Table menu
 
-Enable table adjustment mode, then drag column or row edges directly in the note.
+Use table actions for equal column width, horizontal alignment, and vertical alignment.
 
-![Table resize handles](docs/assets/table-resize.png)
+![Table menu](docs/assets/table-menu.png)
+
+### Toolbar panels
+
+Quickly switch between cell color, heading color, table tools, and note width presets.
+
+![Toolbar panels](docs/assets/toolbar-panels.png)
 
 ## Features
 
