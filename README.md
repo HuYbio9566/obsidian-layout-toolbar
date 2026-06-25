@@ -4,6 +4,26 @@ Note Layout Toolbar is an Obsidian plugin that adds a compact floating toolbar f
 
 It is designed for people who want notes to feel more like editable documents: quickly adjust the current note width, color headings, color selected table cells, align selected cells, and resize table rows or columns without changing every note globally.
 
+## Screenshots
+
+### Floating toolbar
+
+Use the compact toolbar to change the current note width, open color controls, and access table tools.
+
+![Floating toolbar variants](docs/assets/toolbar-overview.png)
+
+### Color controls
+
+Apply heading text colors, heading backgrounds, or selected table-cell backgrounds without changing global defaults.
+
+![Color panel](docs/assets/color-panel.png)
+
+### Table resizing
+
+Enable table adjustment mode, then drag column or row edges directly in the note.
+
+![Table resize handles](docs/assets/table-resize.png)
+
 ## Features
 
 - Floating toolbar shown after selecting content in a note.
