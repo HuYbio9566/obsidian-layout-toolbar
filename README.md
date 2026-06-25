@@ -58,7 +58,7 @@ This lets you keep a clean global setup while still customizing individual notes
 2. Create this folder in your Obsidian vault:
 
 ```text
-YourVault/.obsidian/plugins/note-layout-toolbar/
+YourVault/.obsidian/plugins/layout-toolbar/
 ```
 
 3. Put the three downloaded files into that folder.

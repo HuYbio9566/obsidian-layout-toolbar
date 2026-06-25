@@ -62,17 +62,17 @@ const DEFAULT_SETTINGS: ContentWidthSettings = {
   tableRowSpacing: "default"
 };
 
-const BODY_CLASS = "content-width-control-enabled";
-const CSS_VAR = "--content-width-control-percent";
-const HEADING_PALETTE_CLASS_PREFIX = "content-width-control-headings-";
-const HEADING_TEXT_COLOR_VAR = "--content-width-control-heading-text";
-const HEADING_BACKGROUND_COLOR_VAR = "--content-width-control-heading-background";
-const TABLE_CELL_BACKGROUND_VAR = "--content-width-control-cell-background";
-const TABLE_WIDTH_VAR = "--content-width-control-table-width";
-const TABLE_ROW_SPACING_VAR = "--content-width-control-table-row-spacing";
-const TOOLBAR_CLASS = "content-width-control-toolbar";
-const PAGE_COLOR_SCOPE_CLASS = "content-width-control-page-color-scope";
-const TABLE_RESIZE_MODE_CLASS = "content-width-control-table-resize-mode";
+const BODY_CLASS = "layout-toolbar-enabled";
+const CSS_VAR = "--layout-toolbar-percent";
+const HEADING_PALETTE_CLASS_PREFIX = "layout-toolbar-headings-";
+const HEADING_TEXT_COLOR_VAR = "--layout-toolbar-heading-text";
+const HEADING_BACKGROUND_COLOR_VAR = "--layout-toolbar-heading-background";
+const TABLE_CELL_BACKGROUND_VAR = "--layout-toolbar-cell-background";
+const TABLE_WIDTH_VAR = "--layout-toolbar-table-width";
+const TABLE_ROW_SPACING_VAR = "--layout-toolbar-table-row-spacing";
+const TOOLBAR_CLASS = "layout-toolbar-toolbar";
+const PAGE_COLOR_SCOPE_CLASS = "layout-toolbar-page-color-scope";
+const TABLE_RESIZE_MODE_CLASS = "layout-toolbar-table-resize-mode";
 
 const HEADING_PALETTES = [
   { id: "soft", label: "柔和" },
@@ -706,8 +706,8 @@ export default class ContentWidthControlPlugin extends Plugin {
     this.addCellBackgroundButton(toolbarEl);
     this.addHeadingMenuButton(toolbarEl);
     this.addTableResizeButton(toolbarEl);
-    toolbarEl.createDiv({ cls: "content-width-control-toolbar-divider" });
-    const zoomGroupEl = toolbarEl.createDiv({ cls: "content-width-control-zoom-group" });
+    toolbarEl.createDiv({ cls: "layout-toolbar-toolbar-divider" });
+    const zoomGroupEl = toolbarEl.createDiv({ cls: "layout-toolbar-zoom-group" });
     this.addToolbarButton(zoomGroupEl, "缩窄 5%", "zoom-out", () => this.changeWidthBy(-5));
     this.addWidthMenuButton(zoomGroupEl);
     this.addToolbarButton(zoomGroupEl, "加宽 5%", "zoom-in", () => this.changeWidthBy(5));
@@ -719,7 +719,7 @@ export default class ContentWidthControlPlugin extends Plugin {
 
   addCellBackgroundButton(toolbarEl: HTMLElement) {
     const buttonEl = toolbarEl.createEl("button", {
-      cls: "content-width-control-toolbar-button content-width-control-cell-button",
+      cls: "layout-toolbar-toolbar-button layout-toolbar-cell-button",
       attr: {
         "aria-label": "单元格背景颜色",
         title: "单元格背景颜色",
@@ -737,7 +737,7 @@ export default class ContentWidthControlPlugin extends Plugin {
 
   addTableResizeButton(toolbarEl: HTMLElement) {
     const buttonEl = toolbarEl.createEl("button", {
-      cls: "content-width-control-table-menu-button content-width-control-table-button",
+      cls: "layout-toolbar-table-menu-button layout-toolbar-table-button",
       attr: {
         "aria-label": "表格设置",
         title: "表格设置",
@@ -745,9 +745,9 @@ export default class ContentWidthControlPlugin extends Plugin {
       }
     });
 
-    const iconWrapEl = buttonEl.createSpan({ cls: "content-width-control-table-icon" });
+    const iconWrapEl = buttonEl.createSpan({ cls: "layout-toolbar-table-icon" });
     setIcon(iconWrapEl, "table");
-    const chevronEl = buttonEl.createSpan({ cls: "content-width-control-toolbar-chevron" });
+    const chevronEl = buttonEl.createSpan({ cls: "layout-toolbar-toolbar-chevron" });
     setIcon(chevronEl, "chevron-down");
     buttonEl.addEventListener("click", (event) => {
       event.preventDefault();
@@ -820,7 +820,7 @@ export default class ContentWidthControlPlugin extends Plugin {
         startWidth: target.cellEl.getBoundingClientRect().width,
         startHeight: target.cellEl.getBoundingClientRect().height
       };
-      document.body.addClass(`content-width-control-resizing-${target.kind}`);
+      document.body.addClass(`layout-toolbar-resizing-${target.kind}`);
     });
 
     this.registerDomEvent(window, "mouseup", async () => {
@@ -830,8 +830,8 @@ export default class ContentWidthControlPlugin extends Plugin {
 
       this.persistTableElementStyles(this.activeResizeTarget.tableEl);
       await this.saveSettings();
-      document.body.removeClass("content-width-control-resizing-column");
-      document.body.removeClass("content-width-control-resizing-row");
+      document.body.removeClass("layout-toolbar-resizing-column");
+      document.body.removeClass("layout-toolbar-resizing-row");
       this.activeResizeTarget = null;
       this.hideTableResizeGuide();
     });
@@ -888,8 +888,8 @@ export default class ContentWidthControlPlugin extends Plugin {
     guideEl.toggleClass("is-column", target.kind === "column");
     guideEl.toggleClass("is-row", target.kind === "row");
     guideEl.addClass("is-visible");
-    document.body.toggleClass("content-width-control-hover-column", target.kind === "column");
-    document.body.toggleClass("content-width-control-hover-row", target.kind === "row");
+    document.body.toggleClass("layout-toolbar-hover-column", target.kind === "column");
+    document.body.toggleClass("layout-toolbar-hover-row", target.kind === "row");
 
     if (target.kind === "column") {
       guideEl.style.left = `${cellRect.right - 1}px`;
@@ -906,7 +906,7 @@ export default class ContentWidthControlPlugin extends Plugin {
 
   ensureTableResizeGuide() {
     if (!this.tableResizeGuideEl) {
-      this.tableResizeGuideEl = document.body.createDiv({ cls: "content-width-control-table-resize-guide" });
+      this.tableResizeGuideEl = document.body.createDiv({ cls: "layout-toolbar-table-resize-guide" });
     }
 
     return this.tableResizeGuideEl;
@@ -914,8 +914,8 @@ export default class ContentWidthControlPlugin extends Plugin {
 
   hideTableResizeGuide() {
     this.tableResizeGuideEl?.removeClass("is-visible");
-    document.body.removeClass("content-width-control-hover-column");
-    document.body.removeClass("content-width-control-hover-row");
+    document.body.removeClass("layout-toolbar-hover-column");
+    document.body.removeClass("layout-toolbar-hover-row");
   }
 
   resizeActiveTableTarget(event: MouseEvent) {
@@ -953,7 +953,7 @@ export default class ContentWidthControlPlugin extends Plugin {
 
   addToolbarButton(toolbarEl: HTMLElement, label: string, icon: string, onClick: (event: MouseEvent) => void | Promise<void>) {
     const buttonEl = toolbarEl.createEl("button", {
-      cls: "content-width-control-toolbar-button",
+      cls: "layout-toolbar-toolbar-button",
       attr: {
         "aria-label": label,
         title: label,
@@ -970,15 +970,15 @@ export default class ContentWidthControlPlugin extends Plugin {
 
   addHeadingMenuButton(toolbarEl: HTMLElement) {
     const buttonEl = toolbarEl.createEl("button", {
-      cls: "content-width-control-toolbar-heading-button",
+      cls: "layout-toolbar-toolbar-heading-button",
       attr: {
         "aria-label": "标题颜色",
         title: "标题颜色",
         type: "button"
       }
     });
-    buttonEl.createSpan({ cls: "content-width-control-heading-swatch", text: "A" });
-    const iconEl = buttonEl.createSpan({ cls: "content-width-control-toolbar-chevron" });
+    buttonEl.createSpan({ cls: "layout-toolbar-heading-swatch", text: "A" });
+    const iconEl = buttonEl.createSpan({ cls: "layout-toolbar-toolbar-chevron" });
     setIcon(iconEl, "chevron-down");
     this.headingButtonEl = buttonEl;
     this.headingChevronEl = iconEl;
@@ -1017,7 +1017,7 @@ export default class ContentWidthControlPlugin extends Plugin {
     this.cellBackgroundPanelEl?.remove();
     const pageColors = this.getActivePageColorSettings();
 
-    const panelEl = document.body.createDiv({ cls: "content-width-control-color-panel content-width-control-cell-color-panel" });
+    const panelEl = document.body.createDiv({ cls: "layout-toolbar-color-panel layout-toolbar-cell-color-panel" });
     panelEl.addEventListener("mousedown", (event) => event.preventDefault());
     this.addColorSection(panelEl, "单元格背景颜色", BACKGROUND_COLORS, pageColors.tableCellBackgroundColor, async (colorId) => {
       this.pushUndoSnapshot();
@@ -1027,7 +1027,7 @@ export default class ContentWidthControlPlugin extends Plugin {
     });
     panelEl.createEl("button", {
       text: "恢复默认",
-      cls: "content-width-control-reset-button",
+      cls: "layout-toolbar-reset-button",
       attr: { type: "button" }
     }).addEventListener("click", async (event) => {
       event.preventDefault();
@@ -1077,7 +1077,7 @@ export default class ContentWidthControlPlugin extends Plugin {
     this.headingPanelEl?.remove();
     const pageColors = this.getActivePageColorSettings();
 
-    const panelEl = document.body.createDiv({ cls: "content-width-control-color-panel" });
+    const panelEl = document.body.createDiv({ cls: "layout-toolbar-color-panel" });
     panelEl.addEventListener("mousedown", (event) => event.preventDefault());
     this.addColorSection(panelEl, "字体颜色", TEXT_COLORS, pageColors.headingTextColor, async (colorId) => {
       this.pushUndoSnapshot();
@@ -1095,7 +1095,7 @@ export default class ContentWidthControlPlugin extends Plugin {
     });
     panelEl.createEl("button", {
       text: "恢复默认",
-      cls: "content-width-control-reset-button",
+      cls: "layout-toolbar-reset-button",
       attr: { type: "button" }
     }).addEventListener("click", async (event) => {
       event.preventDefault();
@@ -1124,12 +1124,12 @@ export default class ContentWidthControlPlugin extends Plugin {
     selectedId: string,
     onSelect: (colorId: string) => Promise<void>
   ) {
-    panelEl.createDiv({ cls: "content-width-control-color-panel-title", text: title });
-    const gridEl = panelEl.createDiv({ cls: "content-width-control-color-grid" });
+    panelEl.createDiv({ cls: "layout-toolbar-color-panel-title", text: title });
+    const gridEl = panelEl.createDiv({ cls: "layout-toolbar-color-grid" });
 
     colors.forEach((color) => {
       const swatchEl = gridEl.createEl("button", {
-        cls: "content-width-control-color-swatch",
+        cls: "layout-toolbar-color-swatch",
         attr: {
           "aria-label": color.label,
           "data-color-id": color.id,
@@ -1146,7 +1146,7 @@ export default class ContentWidthControlPlugin extends Plugin {
       if (title === "字体颜色") {
         swatchEl.createSpan({
           text: "A",
-          cls: "content-width-control-color-letter"
+          cls: "layout-toolbar-color-letter"
         }).style.color = color.value || "var(--text-normal)";
       } else if (color.id === "none") {
         swatchEl.addClass("is-empty");
@@ -1178,7 +1178,7 @@ export default class ContentWidthControlPlugin extends Plugin {
       return;
     }
 
-    this.headingPanelEl.querySelectorAll<HTMLElement>(".content-width-control-color-swatch").forEach((swatchEl) => {
+    this.headingPanelEl.querySelectorAll<HTMLElement>(".layout-toolbar-color-swatch").forEach((swatchEl) => {
       const role = swatchEl.dataset.colorRole;
       const pageColors = this.getActivePageColorSettings();
       const selectedId = role === "text" ? pageColors.headingTextColor : pageColors.headingBackgroundColor;
@@ -1191,7 +1191,7 @@ export default class ContentWidthControlPlugin extends Plugin {
       return;
     }
 
-    this.cellBackgroundPanelEl.querySelectorAll<HTMLElement>(".content-width-control-color-swatch").forEach((swatchEl) => {
+    this.cellBackgroundPanelEl.querySelectorAll<HTMLElement>(".layout-toolbar-color-swatch").forEach((swatchEl) => {
       swatchEl.toggleClass("is-selected", swatchEl.dataset.colorId === this.getActivePageColorSettings().tableCellBackgroundColor);
     });
   }
@@ -1225,15 +1225,15 @@ export default class ContentWidthControlPlugin extends Plugin {
   showTableMenuPanel(anchorEl: HTMLElement) {
     this.tableMenuPanelEl?.remove();
 
-    const panelEl = document.body.createDiv({ cls: "content-width-control-dropdown-panel content-width-control-table-panel" });
+    const panelEl = document.body.createDiv({ cls: "layout-toolbar-dropdown-panel layout-toolbar-table-panel" });
     panelEl.addEventListener("mousedown", (event) => event.preventDefault());
     this.addDropdownItem(panelEl, "调整单元格", "sliders-horizontal", true, () => this.toggleTableResizeMode());
     this.addDropdownItem(panelEl, "均分列宽", "columns-3", false, () => this.distributeTableColumnsEvenly());
-    panelEl.createDiv({ cls: "content-width-control-dropdown-divider" });
+    panelEl.createDiv({ cls: "layout-toolbar-dropdown-divider" });
     this.addDropdownItem(panelEl, "左对齐", "align-left", false, () => this.applyTableCellTextAlign("left"));
     this.addDropdownItem(panelEl, "居中对齐", "align-center", false, () => this.applyTableCellTextAlign("center"));
     this.addDropdownItem(panelEl, "右对齐", "align-right", false, () => this.applyTableCellTextAlign("right"));
-    panelEl.createDiv({ cls: "content-width-control-dropdown-divider" });
+    panelEl.createDiv({ cls: "layout-toolbar-dropdown-divider" });
     this.addDropdownItem(panelEl, "顶部对齐", "arrow-up", false, () => this.applyTableCellVerticalAlign("top"));
     this.addDropdownItem(panelEl, "垂直居中", "align-vertical-space-around", false, () => this.applyTableCellVerticalAlign("middle"));
     this.addDropdownItem(panelEl, "底部对齐", "arrow-down", false, () => this.applyTableCellVerticalAlign("bottom"));
@@ -1250,14 +1250,14 @@ export default class ContentWidthControlPlugin extends Plugin {
 
   addDropdownItem(panelEl: HTMLElement, label: string, icon: string | null, isPrimary: boolean, onClick: () => void | Promise<void>) {
     const itemEl = panelEl.createEl("button", {
-      cls: `content-width-control-dropdown-item${isPrimary ? " is-primary" : ""}`,
+      cls: `layout-toolbar-dropdown-item${isPrimary ? " is-primary" : ""}`,
       attr: { type: "button" }
     });
-    const iconEl = itemEl.createSpan({ cls: "content-width-control-dropdown-icon" });
+    const iconEl = itemEl.createSpan({ cls: "layout-toolbar-dropdown-icon" });
     if (icon) {
       setIcon(iconEl, icon);
     }
-    itemEl.createSpan({ cls: "content-width-control-dropdown-label", text: label });
+    itemEl.createSpan({ cls: "layout-toolbar-dropdown-label", text: label });
     itemEl.addEventListener("click", async (event) => {
       event.preventDefault();
       await onClick();
@@ -1366,7 +1366,7 @@ export default class ContentWidthControlPlugin extends Plugin {
 
   addWidthMenuButton(toolbarEl: HTMLElement) {
     const buttonEl = toolbarEl.createEl("button", {
-      cls: "content-width-control-toolbar-width-button",
+      cls: "layout-toolbar-toolbar-width-button",
       attr: {
         "aria-label": "选择正文宽度",
         title: "选择正文宽度",
@@ -1375,10 +1375,10 @@ export default class ContentWidthControlPlugin extends Plugin {
     });
 
     buttonEl.createSpan({
-      cls: "content-width-control-toolbar-value",
+      cls: "layout-toolbar-toolbar-value",
       text: `${this.settings.widthPercent}%`
     });
-    const iconEl = buttonEl.createSpan({ cls: "content-width-control-toolbar-chevron" });
+    const iconEl = buttonEl.createSpan({ cls: "layout-toolbar-toolbar-chevron" });
     setIcon(iconEl, "chevron-down");
     this.widthButtonEl = buttonEl;
     this.widthChevronEl = iconEl;
@@ -1404,14 +1404,14 @@ export default class ContentWidthControlPlugin extends Plugin {
   showWidthMenuPanel(anchorEl: HTMLElement) {
     this.widthMenuPanelEl?.remove();
 
-    const panelEl = document.body.createDiv({ cls: "content-width-control-dropdown-panel content-width-control-width-panel" });
+    const panelEl = document.body.createDiv({ cls: "layout-toolbar-dropdown-panel layout-toolbar-width-panel" });
     panelEl.addEventListener("mousedown", (event) => event.preventDefault());
     WIDTH_OPTIONS.forEach((widthPercent) => {
       const itemEl = panelEl.createEl("button", {
-        cls: "content-width-control-dropdown-item content-width-control-width-item",
+        cls: "layout-toolbar-dropdown-item layout-toolbar-width-item",
         attr: { type: "button" }
       });
-      itemEl.createSpan({ cls: "content-width-control-dropdown-label", text: `${widthPercent}%` });
+      itemEl.createSpan({ cls: "layout-toolbar-dropdown-label", text: `${widthPercent}%` });
       itemEl.toggleClass("is-selected", this.getActivePageWidthPercent() === widthPercent);
       itemEl.addEventListener("click", async (event) => {
         event.preventDefault();
@@ -1553,7 +1553,7 @@ export default class ContentWidthControlPlugin extends Plugin {
   }
 
   refreshToolbarState() {
-    const valueEl = this.toolbarEl?.querySelector<HTMLElement>(".content-width-control-toolbar-value");
+    const valueEl = this.toolbarEl?.querySelector<HTMLElement>(".layout-toolbar-toolbar-value");
     if (valueEl) {
       valueEl.setText(`${this.getActivePageWidthPercent()}%`);
     }
@@ -1571,7 +1571,7 @@ class ContentWidthSettingTab extends PluginSettingTab {
   display(): void {
     const { containerEl } = this;
     containerEl.empty();
-    containerEl.addClass("content-width-control-settings");
+    containerEl.addClass("layout-toolbar-settings");
 
     containerEl.createEl("h2", { text: "内容区域宽度" });
 

@@ -1,159 +1,159 @@
-body.content-width-control-enabled {
-  --file-line-width: var(--content-width-control-percent);
+body.layout-toolbar-enabled {
+  --file-line-width: var(--layout-toolbar-percent);
 }
 
-body.content-width-control-enabled .markdown-preview-view.is-readable-line-width .markdown-preview-sizer,
-body.content-width-control-enabled .markdown-source-view.mod-cm6.is-readable-line-width .cm-sizer {
-  max-width: var(--content-width-control-percent) !important;
+body.layout-toolbar-enabled .markdown-preview-view.is-readable-line-width .markdown-preview-sizer,
+body.layout-toolbar-enabled .markdown-source-view.mod-cm6.is-readable-line-width .cm-sizer {
+  max-width: var(--layout-toolbar-percent) !important;
 }
 
-body.content-width-control-enabled .markdown-preview-view.is-readable-line-width .markdown-preview-sizer,
-body.content-width-control-enabled .markdown-source-view.mod-cm6.is-readable-line-width .cm-sizer {
+body.layout-toolbar-enabled .markdown-preview-view.is-readable-line-width .markdown-preview-sizer,
+body.layout-toolbar-enabled .markdown-source-view.mod-cm6.is-readable-line-width .cm-sizer {
   margin-left: auto !important;
   margin-right: auto !important;
 }
 
-body.content-width-control-enabled .markdown-source-view.mod-cm6.is-readable-line-width .cm-contentContainer,
-body.content-width-control-enabled .markdown-source-view.mod-cm6.is-readable-line-width .cm-content {
+body.layout-toolbar-enabled .markdown-source-view.mod-cm6.is-readable-line-width .cm-contentContainer,
+body.layout-toolbar-enabled .markdown-source-view.mod-cm6.is-readable-line-width .cm-content {
   max-width: 100% !important;
   min-width: 0 !important;
   width: 100%;
 }
 
-body.content-width-control-enabled .markdown-source-view.mod-cm6.is-readable-line-width .cm-line {
+body.layout-toolbar-enabled .markdown-source-view.mod-cm6.is-readable-line-width .cm-line {
   max-width: none !important;
   min-width: 0 !important;
   width: 100%;
 }
 
-body.content-width-control-enabled :is(.markdown-preview-view table, .markdown-rendered table, .markdown-source-view.mod-cm6 table) {
+body.layout-toolbar-enabled :is(.markdown-preview-view table, .markdown-rendered table, .markdown-source-view.mod-cm6 table) {
   width: 100% !important;
   max-width: 100%;
 }
 
-body.content-width-control-enabled .markdown-source-view.mod-cm6 :is(table, th, td) {
+body.layout-toolbar-enabled .markdown-source-view.mod-cm6 :is(table, th, td) {
   table-layout: fixed;
   max-width: 100%;
   min-width: 0 !important;
 }
 
-body.content-width-control-enabled .markdown-source-view.mod-cm6 :is(th, td, th *, td *) {
+body.layout-toolbar-enabled .markdown-source-view.mod-cm6 :is(th, td, th *, td *) {
   overflow-wrap: anywhere;
   word-break: break-word;
   white-space: normal;
 }
 
-body.content-width-control-enabled[style*="--content-width-control-heading-text"] :is(.markdown-preview-view h1, .markdown-preview-view h2, .markdown-preview-view h3, .markdown-preview-view h4, .markdown-preview-view h5, .markdown-preview-view h6, .cm-header) {
-  color: var(--content-width-control-heading-text);
+body.layout-toolbar-enabled[style*="--layout-toolbar-heading-text"] :is(.markdown-preview-view h1, .markdown-preview-view h2, .markdown-preview-view h3, .markdown-preview-view h4, .markdown-preview-view h5, .markdown-preview-view h6, .cm-header) {
+  color: var(--layout-toolbar-heading-text);
 }
 
-body.content-width-control-enabled[style*="--content-width-control-heading-background"] :is(.markdown-preview-view h1, .markdown-preview-view h2, .markdown-preview-view h3, .markdown-preview-view h4, .markdown-preview-view h5, .markdown-preview-view h6) {
+body.layout-toolbar-enabled[style*="--layout-toolbar-heading-background"] :is(.markdown-preview-view h1, .markdown-preview-view h2, .markdown-preview-view h3, .markdown-preview-view h4, .markdown-preview-view h5, .markdown-preview-view h6) {
   width: fit-content;
   max-width: 100%;
   padding: 0 0.14em;
   border-radius: 5px;
-  background: var(--content-width-control-heading-background);
+  background: var(--layout-toolbar-heading-background);
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
 }
 
-body.content-width-control-enabled[style*="--content-width-control-heading-background"] .cm-line:has(.cm-header) {
+body.layout-toolbar-enabled[style*="--layout-toolbar-heading-background"] .cm-line:has(.cm-header) {
   border-radius: 5px;
-  background: var(--content-width-control-heading-background);
+  background: var(--layout-toolbar-heading-background);
 }
 
-.content-width-control-page-color-scope.content-width-control-headings-soft {
-  --content-width-control-h1: #6d5dfc;
-  --content-width-control-h2: #1677c8;
-  --content-width-control-h3: #1f8f6b;
-  --content-width-control-h4: #b36b00;
-  --content-width-control-h5: #b5487a;
-  --content-width-control-h6: #6a737d;
+.layout-toolbar-page-color-scope.layout-toolbar-headings-soft {
+  --layout-toolbar-h1: #6d5dfc;
+  --layout-toolbar-h2: #1677c8;
+  --layout-toolbar-h3: #1f8f6b;
+  --layout-toolbar-h4: #b36b00;
+  --layout-toolbar-h5: #b5487a;
+  --layout-toolbar-h6: #6a737d;
 }
 
-.content-width-control-page-color-scope.content-width-control-headings-vivid {
-  --content-width-control-h1: #7c3aed;
-  --content-width-control-h2: #006adc;
-  --content-width-control-h3: #00875a;
-  --content-width-control-h4: #d97706;
-  --content-width-control-h5: #db2777;
-  --content-width-control-h6: #475569;
+.layout-toolbar-page-color-scope.layout-toolbar-headings-vivid {
+  --layout-toolbar-h1: #7c3aed;
+  --layout-toolbar-h2: #006adc;
+  --layout-toolbar-h3: #00875a;
+  --layout-toolbar-h4: #d97706;
+  --layout-toolbar-h5: #db2777;
+  --layout-toolbar-h6: #475569;
 }
 
-.content-width-control-page-color-scope.content-width-control-headings-ink {
-  --content-width-control-h1: var(--text-normal);
-  --content-width-control-h2: color-mix(in srgb, var(--text-normal) 88%, var(--text-muted));
-  --content-width-control-h3: color-mix(in srgb, var(--text-normal) 78%, var(--text-muted));
-  --content-width-control-h4: color-mix(in srgb, var(--text-normal) 68%, var(--text-muted));
-  --content-width-control-h5: color-mix(in srgb, var(--text-normal) 58%, var(--text-muted));
-  --content-width-control-h6: var(--text-muted);
+.layout-toolbar-page-color-scope.layout-toolbar-headings-ink {
+  --layout-toolbar-h1: var(--text-normal);
+  --layout-toolbar-h2: color-mix(in srgb, var(--text-normal) 88%, var(--text-muted));
+  --layout-toolbar-h3: color-mix(in srgb, var(--text-normal) 78%, var(--text-muted));
+  --layout-toolbar-h4: color-mix(in srgb, var(--text-normal) 68%, var(--text-muted));
+  --layout-toolbar-h5: color-mix(in srgb, var(--text-normal) 58%, var(--text-muted));
+  --layout-toolbar-h6: var(--text-muted);
 }
 
-.content-width-control-page-color-scope[class*="content-width-control-headings-"] :is(.markdown-preview-view h1, .cm-header-1) {
-  color: var(--content-width-control-h1);
+.layout-toolbar-page-color-scope[class*="layout-toolbar-headings-"] :is(.markdown-preview-view h1, .cm-header-1) {
+  color: var(--layout-toolbar-h1);
 }
 
-.content-width-control-page-color-scope[class*="content-width-control-headings-"] :is(.markdown-preview-view h2, .cm-header-2) {
-  color: var(--content-width-control-h2);
+.layout-toolbar-page-color-scope[class*="layout-toolbar-headings-"] :is(.markdown-preview-view h2, .cm-header-2) {
+  color: var(--layout-toolbar-h2);
 }
 
-.content-width-control-page-color-scope[class*="content-width-control-headings-"] :is(.markdown-preview-view h3, .cm-header-3) {
-  color: var(--content-width-control-h3);
+.layout-toolbar-page-color-scope[class*="layout-toolbar-headings-"] :is(.markdown-preview-view h3, .cm-header-3) {
+  color: var(--layout-toolbar-h3);
 }
 
-.content-width-control-page-color-scope[class*="content-width-control-headings-"] :is(.markdown-preview-view h4, .cm-header-4) {
-  color: var(--content-width-control-h4);
+.layout-toolbar-page-color-scope[class*="layout-toolbar-headings-"] :is(.markdown-preview-view h4, .cm-header-4) {
+  color: var(--layout-toolbar-h4);
 }
 
-.content-width-control-page-color-scope[class*="content-width-control-headings-"] :is(.markdown-preview-view h5, .cm-header-5) {
-  color: var(--content-width-control-h5);
+.layout-toolbar-page-color-scope[class*="layout-toolbar-headings-"] :is(.markdown-preview-view h5, .cm-header-5) {
+  color: var(--layout-toolbar-h5);
 }
 
-.content-width-control-page-color-scope[class*="content-width-control-headings-"] :is(.markdown-preview-view h6, .cm-header-6) {
-  color: var(--content-width-control-h6);
+.layout-toolbar-page-color-scope[class*="layout-toolbar-headings-"] :is(.markdown-preview-view h6, .cm-header-6) {
+  color: var(--layout-toolbar-h6);
 }
 
-.content-width-control-page-color-scope[style*="--content-width-control-heading-text"] :is(.markdown-preview-view h1, .markdown-preview-view h2, .markdown-preview-view h3, .markdown-preview-view h4, .markdown-preview-view h5, .markdown-preview-view h6, .cm-header) {
-  color: var(--content-width-control-heading-text);
+.layout-toolbar-page-color-scope[style*="--layout-toolbar-heading-text"] :is(.markdown-preview-view h1, .markdown-preview-view h2, .markdown-preview-view h3, .markdown-preview-view h4, .markdown-preview-view h5, .markdown-preview-view h6, .cm-header) {
+  color: var(--layout-toolbar-heading-text);
 }
 
-.content-width-control-page-color-scope[style*="--content-width-control-heading-background"] :is(.markdown-preview-view h1, .markdown-preview-view h2, .markdown-preview-view h3, .markdown-preview-view h4, .markdown-preview-view h5, .markdown-preview-view h6) {
+.layout-toolbar-page-color-scope[style*="--layout-toolbar-heading-background"] :is(.markdown-preview-view h1, .markdown-preview-view h2, .markdown-preview-view h3, .markdown-preview-view h4, .markdown-preview-view h5, .markdown-preview-view h6) {
   width: fit-content;
   max-width: 100%;
   padding: 0 0.14em;
   border-radius: 5px;
-  background: var(--content-width-control-heading-background);
+  background: var(--layout-toolbar-heading-background);
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
 }
 
-.content-width-control-page-color-scope[style*="--content-width-control-heading-background"] .cm-line:has(.cm-header) {
+.layout-toolbar-page-color-scope[style*="--layout-toolbar-heading-background"] .cm-line:has(.cm-header) {
   border-radius: 5px;
-  background: var(--content-width-control-heading-background);
+  background: var(--layout-toolbar-heading-background);
 }
 
-body.content-width-control-enabled[style*="--content-width-control-table-width"] :is(.markdown-preview-view table, .markdown-rendered table) {
-  width: var(--content-width-control-table-width) !important;
+body.layout-toolbar-enabled[style*="--layout-toolbar-table-width"] :is(.markdown-preview-view table, .markdown-rendered table) {
+  width: var(--layout-toolbar-table-width) !important;
 }
 
-body.content-width-control-enabled[style*="--content-width-control-table-row-spacing"] :is(.markdown-preview-view th, .markdown-preview-view td, .markdown-rendered th, .markdown-rendered td) {
-  padding-top: var(--content-width-control-table-row-spacing);
-  padding-bottom: var(--content-width-control-table-row-spacing);
+body.layout-toolbar-enabled[style*="--layout-toolbar-table-row-spacing"] :is(.markdown-preview-view th, .markdown-preview-view td, .markdown-rendered th, .markdown-rendered td) {
+  padding-top: var(--layout-toolbar-table-row-spacing);
+  padding-bottom: var(--layout-toolbar-table-row-spacing);
 }
 
-.content-width-control-settings .setting-item-control select,
-.content-width-control-settings .setting-item-control input[type="text"],
-.content-width-control-settings .setting-item-control input[type="number"] {
+.layout-toolbar-settings .setting-item-control select,
+.layout-toolbar-settings .setting-item-control input[type="text"],
+.layout-toolbar-settings .setting-item-control input[type="number"] {
   box-sizing: border-box;
   width: 96px;
   min-width: 96px;
 }
 
-.content-width-control-page-color-scope[style*="--content-width-control-cell-background"] :is(.markdown-preview-view th, .markdown-preview-view td, .markdown-rendered th, .markdown-rendered td) {
-  background-color: var(--content-width-control-cell-background);
+.layout-toolbar-page-color-scope[style*="--layout-toolbar-cell-background"] :is(.markdown-preview-view th, .markdown-preview-view td, .markdown-rendered th, .markdown-rendered td) {
+  background-color: var(--layout-toolbar-cell-background);
 }
 
-.content-width-control-toolbar {
+.layout-toolbar-toolbar {
   position: fixed;
   z-index: 9999;
   display: flex;
@@ -179,13 +179,13 @@ body.content-width-control-enabled[style*="--content-width-control-table-row-spa
   transition: opacity 100ms ease, transform 100ms ease;
 }
 
-.content-width-control-toolbar.is-visible {
+.layout-toolbar-toolbar.is-visible {
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
 }
 
-.content-width-control-toolbar-button {
+.layout-toolbar-toolbar-button {
   appearance: none;
   -webkit-appearance: none;
   display: inline-flex;
@@ -206,7 +206,7 @@ body.content-width-control-enabled[style*="--content-width-control-table-row-spa
   margin: 0;
 }
 
-.content-width-control-toolbar-heading-button {
+.layout-toolbar-toolbar-heading-button {
   appearance: none;
   -webkit-appearance: none;
   display: inline-flex;
@@ -227,7 +227,7 @@ body.content-width-control-enabled[style*="--content-width-control-table-row-spa
   margin: 0;
 }
 
-.content-width-control-table-menu-button {
+.layout-toolbar-table-menu-button {
   appearance: none;
   -webkit-appearance: none;
   display: inline-flex;
@@ -248,7 +248,7 @@ body.content-width-control-enabled[style*="--content-width-control-table-row-spa
   margin: 0;
 }
 
-.content-width-control-table-icon {
+.layout-toolbar-table-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -256,7 +256,7 @@ body.content-width-control-enabled[style*="--content-width-control-table-row-spa
   height: 20px;
 }
 
-.content-width-control-heading-swatch {
+.layout-toolbar-heading-swatch {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -272,7 +272,7 @@ body.content-width-control-enabled[style*="--content-width-control-table-row-spa
   line-height: 1;
 }
 
-.content-width-control-toolbar-divider {
+.layout-toolbar-toolbar-divider {
   width: 1px;
   height: 16px;
   margin: 0;
@@ -280,14 +280,14 @@ body.content-width-control-enabled[style*="--content-width-control-table-row-spa
   opacity: 1;
 }
 
-.content-width-control-zoom-group {
+.layout-toolbar-zoom-group {
   display: inline-flex;
   align-items: center;
   gap: 12px;
   height: 24px;
 }
 
-.content-width-control-toolbar-width-button {
+.layout-toolbar-toolbar-width-button {
   appearance: none;
   -webkit-appearance: none;
   display: inline-flex;
@@ -308,7 +308,7 @@ body.content-width-control-enabled[style*="--content-width-control-table-row-spa
   margin: 0;
 }
 
-.content-width-control-toolbar-value {
+.layout-toolbar-toolbar-value {
   min-width: 37px;
   padding: 0;
   color: #333639;
@@ -318,7 +318,7 @@ body.content-width-control-enabled[style*="--content-width-control-table-row-spa
   text-align: center;
 }
 
-.content-width-control-toolbar-chevron {
+.layout-toolbar-toolbar-chevron {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -327,63 +327,63 @@ body.content-width-control-enabled[style*="--content-width-control-table-row-spa
   color: #333639;
 }
 
-.content-width-control-toolbar-button:hover,
-.content-width-control-toolbar-button:focus-visible,
-.content-width-control-toolbar-button.is-active,
-.content-width-control-toolbar-heading-button.is-active,
-.content-width-control-toolbar-heading-button:hover,
-.content-width-control-toolbar-heading-button:focus-visible,
-.content-width-control-table-menu-button:hover,
-.content-width-control-table-menu-button:focus-visible,
-.content-width-control-toolbar-width-button:hover,
-.content-width-control-toolbar-width-button:focus-visible {
+.layout-toolbar-toolbar-button:hover,
+.layout-toolbar-toolbar-button:focus-visible,
+.layout-toolbar-toolbar-button.is-active,
+.layout-toolbar-toolbar-heading-button.is-active,
+.layout-toolbar-toolbar-heading-button:hover,
+.layout-toolbar-toolbar-heading-button:focus-visible,
+.layout-toolbar-table-menu-button:hover,
+.layout-toolbar-table-menu-button:focus-visible,
+.layout-toolbar-toolbar-width-button:hover,
+.layout-toolbar-toolbar-width-button:focus-visible {
   color: #111827;
   background: transparent !important;
 }
 
-.content-width-control-cell-button.is-active,
-.content-width-control-toolbar-heading-button.is-active,
-.content-width-control-table-button.is-active {
+.layout-toolbar-cell-button.is-active,
+.layout-toolbar-toolbar-heading-button.is-active,
+.layout-toolbar-table-button.is-active {
   color: #3873fa;
   background: transparent !important;
 }
 
-.content-width-control-toolbar-heading-button.is-active .content-width-control-heading-swatch {
+.layout-toolbar-toolbar-heading-button.is-active .layout-toolbar-heading-swatch {
   border-color: #3873fa;
   color: #3873fa;
 }
 
-.content-width-control-toolbar-width-button.is-active,
-.content-width-control-toolbar-width-button.is-active .content-width-control-toolbar-value,
-.content-width-control-toolbar-width-button.is-active .content-width-control-toolbar-chevron {
+.layout-toolbar-toolbar-width-button.is-active,
+.layout-toolbar-toolbar-width-button.is-active .layout-toolbar-toolbar-value,
+.layout-toolbar-toolbar-width-button.is-active .layout-toolbar-toolbar-chevron {
   color: #3873fa;
 }
 
-.content-width-control-toolbar-button svg {
+.layout-toolbar-toolbar-button svg {
   width: 20px;
   height: 20px;
   stroke-width: 1.7;
 }
 
-.content-width-control-cell-button svg {
+.layout-toolbar-cell-button svg {
   width: 20px;
   height: 20px;
   stroke-width: 1.7;
 }
 
-.content-width-control-table-icon svg {
+.layout-toolbar-table-icon svg {
   width: 20px;
   height: 20px;
   stroke-width: 2;
 }
 
-.content-width-control-toolbar-chevron svg {
+.layout-toolbar-toolbar-chevron svg {
   width: 12px;
   height: 12px;
   stroke-width: 2.2;
 }
 
-.content-width-control-color-panel {
+.layout-toolbar-color-panel {
   position: fixed;
   z-index: 10050;
   box-sizing: border-box;
@@ -406,13 +406,13 @@ body.content-width-control-enabled[style*="--content-width-control-table-row-spa
   transition: opacity 100ms ease, transform 100ms ease;
 }
 
-.content-width-control-color-panel.is-visible {
+.layout-toolbar-color-panel.is-visible {
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
 }
 
-.content-width-control-color-panel-title {
+.layout-toolbar-color-panel-title {
   margin: 0 0 8px;
   color: #000000;
   font-size: 12px;
@@ -420,14 +420,14 @@ body.content-width-control-enabled[style*="--content-width-control-table-row-spa
   line-height: 17px;
 }
 
-.content-width-control-color-grid {
+.layout-toolbar-color-grid {
   display: grid;
   grid-template-columns: repeat(8, 24px);
   gap: 8px 4px;
   margin-bottom: 16px;
 }
 
-.content-width-control-color-swatch {
+.layout-toolbar-color-swatch {
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -446,24 +446,24 @@ body.content-width-control-enabled[style*="--content-width-control-table-row-spa
   overflow: visible;
 }
 
-.content-width-control-color-swatch.is-selected {
+.layout-toolbar-color-swatch.is-selected {
   border-color: #336df4 !important;
   box-shadow: 0 0 0 2px #336df4 !important;
 }
 
-.content-width-control-color-swatch.is-empty {
+.layout-toolbar-color-swatch.is-empty {
   background:
     linear-gradient(135deg, transparent 48%, #aab0b8 49%, #aab0b8 51%, transparent 52%),
     var(--background-primary);
 }
 
-.content-width-control-color-letter {
+.layout-toolbar-color-letter {
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
 }
 
-.content-width-control-reset-button {
+.layout-toolbar-reset-button {
   appearance: none;
   -webkit-appearance: none;
   width: 100%;
@@ -478,14 +478,14 @@ body.content-width-control-enabled[style*="--content-width-control-table-row-spa
   cursor: pointer;
 }
 
-.content-width-control-reset-button:hover,
-.content-width-control-reset-button:focus-visible {
+.layout-toolbar-reset-button:hover,
+.layout-toolbar-reset-button:focus-visible {
   border-color: #3873fa !important;
   color: #3873fa;
   background: #ffffff !important;
 }
 
-.content-width-control-dropdown-panel {
+.layout-toolbar-dropdown-panel {
   position: fixed;
   z-index: 10050;
   display: flex;
@@ -512,21 +512,21 @@ body.content-width-control-enabled[style*="--content-width-control-table-row-spa
   overflow: hidden;
 }
 
-.content-width-control-dropdown-panel.is-visible {
+.layout-toolbar-dropdown-panel.is-visible {
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
 }
 
-.content-width-control-table-panel {
+.layout-toolbar-table-panel {
   width: 144px;
 }
 
-.content-width-control-width-panel {
+.layout-toolbar-width-panel {
   width: 96px;
 }
 
-.content-width-control-dropdown-item {
+.layout-toolbar-dropdown-item {
   appearance: none;
   -webkit-appearance: none;
   display: flex;
@@ -552,15 +552,15 @@ body.content-width-control-enabled[style*="--content-width-control-table-row-spa
   font-family: var(--font-interface);
 }
 
-.content-width-control-dropdown-item:hover,
-.content-width-control-dropdown-item:focus-visible,
-.content-width-control-dropdown-item.is-primary,
-.content-width-control-dropdown-item.is-selected {
+.layout-toolbar-dropdown-item:hover,
+.layout-toolbar-dropdown-item:focus-visible,
+.layout-toolbar-dropdown-item.is-primary,
+.layout-toolbar-dropdown-item.is-selected {
   color: #3873fa;
   background: #f6f6f6 !important;
 }
 
-.content-width-control-dropdown-icon {
+.layout-toolbar-dropdown-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -572,13 +572,13 @@ body.content-width-control-enabled[style*="--content-width-control-table-row-spa
   overflow: hidden;
 }
 
-.content-width-control-dropdown-icon svg {
+.layout-toolbar-dropdown-icon svg {
   width: 14px;
   height: 14px;
   stroke-width: 1.8;
 }
 
-.content-width-control-dropdown-label {
+.layout-toolbar-dropdown-label {
   display: block;
   flex: 1 0 0;
   min-width: 0;
@@ -591,36 +591,36 @@ body.content-width-control-enabled[style*="--content-width-control-table-row-spa
   white-space: nowrap;
 }
 
-.content-width-control-dropdown-divider {
+.layout-toolbar-dropdown-divider {
   width: 100%;
   height: 1px;
   margin: 0;
   background: rgb(238 238 238 / 93%);
 }
 
-body.content-width-control-table-resize-mode :is(.markdown-preview-view table, .markdown-rendered table) {
+body.layout-toolbar-table-resize-mode :is(.markdown-preview-view table, .markdown-rendered table) {
   user-select: none;
 }
 
-body.content-width-control-table-resize-mode :is(.markdown-preview-view td, .markdown-preview-view th, .markdown-rendered td, .markdown-rendered th) {
+body.layout-toolbar-table-resize-mode :is(.markdown-preview-view td, .markdown-preview-view th, .markdown-rendered td, .markdown-rendered th) {
   position: relative;
 }
 
-body.content-width-control-resizing-column,
-body.content-width-control-resizing-column *,
-body.content-width-control-hover-column,
-body.content-width-control-hover-column * {
+body.layout-toolbar-resizing-column,
+body.layout-toolbar-resizing-column *,
+body.layout-toolbar-hover-column,
+body.layout-toolbar-hover-column * {
   cursor: col-resize !important;
 }
 
-body.content-width-control-resizing-row,
-body.content-width-control-resizing-row *,
-body.content-width-control-hover-row,
-body.content-width-control-hover-row * {
+body.layout-toolbar-resizing-row,
+body.layout-toolbar-resizing-row *,
+body.layout-toolbar-hover-row,
+body.layout-toolbar-hover-row * {
   cursor: row-resize !important;
 }
 
-.content-width-control-table-resize-guide {
+.layout-toolbar-table-resize-guide {
   position: fixed;
   z-index: 9998;
   display: none;
@@ -629,14 +629,14 @@ body.content-width-control-hover-row * {
   box-shadow: 0 0 0 1px rgb(56 115 250 / 16%);
 }
 
-.content-width-control-table-resize-guide.is-visible {
+.layout-toolbar-table-resize-guide.is-visible {
   display: block;
 }
 
-.content-width-control-table-resize-guide.is-column {
+.layout-toolbar-table-resize-guide.is-column {
   cursor: col-resize;
 }
 
-.content-width-control-table-resize-guide.is-row {
+.layout-toolbar-table-resize-guide.is-row {
   cursor: row-resize;
 }
